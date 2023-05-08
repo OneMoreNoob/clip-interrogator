@@ -105,10 +105,6 @@ class Interrogator():
             self.clip_model, _, self.clip_preprocess = open_clip.create_model_and_transforms(
                 clip_model_name, 
                 pretrained=clip_model_pretrained_name, 
-                precision='fp16' if config.device == 'cuda' else 'fp32',
-                device=config.device,
-                jit=True,
-                cache_dir=config.clip_model_path
             )
             self.clip_model.eval()
         else:
