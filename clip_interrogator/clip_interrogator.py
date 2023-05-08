@@ -110,7 +110,7 @@ class Interrogator():
         else:
             self.clip_model = config.clip_model
             self.clip_preprocess = config.clip_preprocess
-        self.tokenize = open_clip.get_tokenizer(clip_model_name)
+        self.tokenize = open_clip.get_tokenizer(config.clip_model_name.split("/", 2)[0])
 
         sites = ['Artstation', 'behance', 'cg society', 'cgsociety', 'deviantart', 'dribbble', 
                  'flickr', 'instagram', 'pexels', 'pinterest', 'pixabay', 'pixiv', 'polycount', 
