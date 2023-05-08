@@ -107,7 +107,7 @@ class Interrogator():
                 pretrained=clip_model_pretrained_name, 
                 precision='fp16' if config.device == 'cuda' else 'fp32',
                 device=config.device,
-                jit=False,
+                jit=True,
                 cache_dir=config.clip_model_path
             )
             self.clip_model.eval()
